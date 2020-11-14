@@ -5,7 +5,7 @@ from django.conf import settings
 def is_weather_normal(place_object) -> bool:
     lat = place_object.lat
     lon = place_object.lon
-    res = requests.get('api.openweathermap.org/data/2.5', params={
+    res = requests.get('http://api.openweathermap.org/data/2.5', params={
         'appid': settings.OPENWEATHERMAP_API_KEY,
         'lat': lat,
         'lon': lon
@@ -14,3 +14,4 @@ def is_weather_normal(place_object) -> bool:
         return True
     else:
         return False
+
