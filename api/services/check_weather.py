@@ -1,8 +1,9 @@
 import requests
 from django.conf import settings
+from .point import Point
 
 
-def is_weather_normal(place_object) -> bool:
+def is_weather_normal(place_object: Point) -> bool:
     lat = place_object.lat
     lon = place_object.lon
     res = requests.get('http://api.openweathermap.org/data/2.5', params={
