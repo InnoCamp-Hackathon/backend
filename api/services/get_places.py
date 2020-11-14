@@ -6,7 +6,7 @@ from typing import Dict
 def get_places(radius: int, lat: float, lon: float) -> Dict:
     res = requests.get(
         'https://maps.googleapis.com/maps/api/place/nearbysearch/json', params={
-            'location': f'{lat},{lon}',
+            'location': f'{lon},{lat}',
             'type': 'park',
             'name': 'парк',
             'radius': radius,
