@@ -13,4 +13,4 @@ def get_places(radius: int, lat: float, lon: float) -> Dict:
             'language': 'ru',
             'key': settings.GOOGLEMAPS_API_KEY
         }).json()
-    return res
+    return res['results']
