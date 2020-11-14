@@ -12,8 +12,9 @@ class Place(models.Model):
         r_lat1, r_lat2 = radians(self.lat), radians(point.lat)
         r_lon1, r_lon2 = radians(self.lon), radians(point.lon)
         delta_lon = r_lat1 - r_lat2
-        delta_lat = r_lon1 - r_lat2
+        delta_lat = r_lon1 - r_lon2
         a = sin(delta_lat / 2) ** 2 + cos(r_lat1) * cos(r_lat2) * sin(delta_lon / 2) ** 2
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
         r = 6373000.  # Earth radius in meters
-        return c * r
+        res = c * r
+        return res
