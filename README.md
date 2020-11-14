@@ -1,7 +1,7 @@
 # InnoCamp-Hackathon api documentation
 ```
-api/get_location?lat={lat}&lon={lon}&r={r}
+api/places/nearby?lat={lat}&lon={lon}&raduis={radius}
 ```
 ### Parameters
 `lat, lon` - `required` Geographical coordinates (latitude, longitude)  
-`r` - `required` radius
+`radius` - `required` radius
